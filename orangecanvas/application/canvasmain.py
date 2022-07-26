@@ -260,10 +260,6 @@ class CanvasMainWindow(QMainWindow):
 
         self.dock_help.setDefaultText(
             "Select a widget to show its description."
-            "<br/><br/>"
-            "See <a href='action:examples-action'>workflow examples</a>, "
-            "<a href='action:screencasts-action'>YouTube tutorials</a>, "
-            "or open the <a href='action:welcome-action'>welcome screen</a>."
         )
         self.dock_help_action = canvas_tool_dock.toggleQuickHelpAction()
         self.dock_help_action.setText(self.tr("Show Help"))
@@ -428,12 +424,12 @@ class CanvasMainWindow(QMainWindow):
             menuRole=QAction.QuitRole,
             shortcut=QKeySequence.Quit,
         )
-        self.welcome_action = QAction(
-            self.tr("Welcome"), self,
-            objectName="welcome-action",
-            toolTip=self.tr("Show welcome screen."),
-            triggered=self.welcome_dialog,
-        )
+        # self.welcome_action = QAction(
+        #     self.tr("Welcome"), self,
+        #     objectName="welcome-action",
+        #     toolTip=self.tr("Show welcome screen."),
+        #     triggered=self.welcome_dialog,
+        # )
 
         def open_url_for(name):
             url = config.default.APPLICATION_URLS.get(name)
@@ -461,21 +457,21 @@ class CanvasMainWindow(QMainWindow):
         )
         config_url_action(self.get_started_action, "Quick Start")
 
-        self.get_started_screencasts_action = QAction(
-            self.tr("Video Tutorials"), self,
-            objectName="screencasts-action",
-            toolTip=self.tr("View video tutorials"),
-            icon=load_styled_svg_icon("YouTube.svg"),
-        )
-        config_url_action(self.get_started_screencasts_action, "Screencasts")
+        # self.get_started_screencasts_action = QAction(
+        #     self.tr("Video Tutorials"), self,
+        #     objectName="screencasts-action",
+        #     toolTip=self.tr("View video tutorials"),
+        #     icon=load_styled_svg_icon("YouTube.svg"),
+        # )
+        # config_url_action(self.get_started_screencasts_action, "Screencasts")
 
-        self.documentation_action = QAction(
-            self.tr("Documentation"), self,
-            objectName="documentation-action",
-            toolTip=self.tr("View reference documentation."),
-            icon=load_styled_svg_icon("Documentation.svg"),
-        )
-        config_url_action(self.documentation_action, "Documentation")
+        # self.documentation_action = QAction(
+        #     self.tr("Documentation"), self,
+        #     objectName="documentation-action",
+        #     toolTip=self.tr("View reference documentation."),
+        #     icon=load_styled_svg_icon("Documentation.svg"),
+        # )
+        # config_url_action(self.documentation_action, "Documentation")
 
         self.examples_action = QAction(
             self.tr("Example Workflows"), self,
@@ -716,11 +712,11 @@ class CanvasMainWindow(QMainWindow):
         menu_bar.addMenu(self.view_menu)
 
         # Options menu
-        self.options_menu = QMenu(
-            self.tr("&Options"), menu_bar, objectName="options-menu"
-        )
-        self.options_menu.addAction(self.canvas_settings_action)
-        self.options_menu.addAction(self.canvas_addons_action)
+        # self.options_menu = QMenu(
+        #     self.tr("&Options"), menu_bar, objectName="options-menu"
+        # )
+        # self.options_menu.addAction(self.canvas_settings_action)
+        # self.options_menu.addAction(self.canvas_addons_action)
 
         # Widget menu
         menu_bar.addMenu(self.widget_menu)
@@ -734,7 +730,7 @@ class CanvasMainWindow(QMainWindow):
             self.window_menu.addAction(self.zoom_action)
             menu_bar.addMenu(self.window_menu)
 
-        menu_bar.addMenu(self.options_menu)
+        # menu_bar.addMenu(self.options_menu)
 
         # Help menu.
         self.help_menu = QMenu(
@@ -742,10 +738,10 @@ class CanvasMainWindow(QMainWindow):
         )
         self.help_menu.addActions([
             self.about_action,
-            self.welcome_action,
-            self.get_started_screencasts_action,
+            # self.welcome_action,
+            # self.get_started_screencasts_action,
             self.examples_action,
-            self.documentation_action
+            # self.documentation_action
         ])
 
         menu_bar.addMenu(self.help_menu)
