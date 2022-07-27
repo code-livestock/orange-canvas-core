@@ -330,7 +330,7 @@ class Main:
             if not parent.is_transient():
                 return
             swp_loaded = parent.ask_load_swp_if_exists()
-            if not swp_loaded and want_welcome:
+            if not swp_loaded and False:
                 parent.welcome_action.trigger()
 
         # On a timer to allow FileOpen events to be delivered. If so
